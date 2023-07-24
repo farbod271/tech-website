@@ -89,16 +89,27 @@ nav {
 }
 
 .first-view {
-    height: max(100vh);
+    height: max(142vh);
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 .face {
-    height: 70%;
+    height: 40%;
     width: 100%;
     background-color: var(--face) ;
+    position: relative;
 
+}
+
+.scary {
+    z-index: 1000;
+    bottom: 30px;
+    position: absolute;
+    color: #ff94c6;
+    font-size: 1.2rem;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .face canvas {
@@ -111,6 +122,8 @@ nav {
     width: 100%;
     background-color: #161616;
     font-size: 1rem;
+    /* overflow: visible; */
+    padding-top: 40px;
 }
 
 .explain h4 {
