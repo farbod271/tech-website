@@ -9,11 +9,54 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, faced.clientWidth / faced.clientHeight, 0.1, 1000 );
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( faced.clientWidth, faced.clientHeight );
-const light = new THREE.AmbientLight( 0x404040 , 5 ); // soft white light
+
+
+// const light = new THREE.AmbientLight( 0x404040 , 5 ); // soft white light
+// scene.add( light );
+
+// light = new THREE.PointLight(0xff00ff);
+// light.position.set(15, 15, 15);
+// scene.add(light);
+
+const light = new THREE.PointLight( 0xffffff, 1, 100 );
+light.position.set( 1, 20, 30 );
+// light.castShadow = true; 
 scene.add( light );
+
+// var lightAmb = new THREE.AmbientLight(0x000000 , 5);
+// scene.add(lightAmb);
+
+var mouse = {
+    x: 0,
+    y: 0
+  };
+document.addEventListener('mousemove', onMouseMove, false);
+
+
+
+function onMouseMove(event) {
+  event.preventDefault();
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  console.log(mouse.x, mouse.y);
+
+  var vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
+  vector.unproject(camera);
+  var dir = vector.sub(camera.position).normalize();
+  var distance = -camera.position.z / dir.z;
+  var pos = camera.position.clone().add(dir.multiplyScalar(distance));
+  //mouseMesh.position.copy(pos);
+
+  light.position.copy(new THREE.Vector3(pos.x, pos.y, pos.z + 2));
+};
+
+
+
 function render() {
 
     renderer.render( scene, camera );
+    console.log("render");
 
 }
 
@@ -23,10 +66,11 @@ loader.load( 'face.glb', function ( gltf ) {
     scene.add( gltf.scene );
     scene.background = new THREE.Color(0x161616);
 
-    render();
+    // render();
     faced.appendChild( renderer.domElement );
     const controls = new OrbitControls( camera, renderer.domElement );
-    controls.addEventListener( 'change', render ); // use if there is no animation loop
+
+
     controls.minDistance = 2;
     controls.maxDistance = 10;
     controls.target.set( 0, 0, - 0.2 );
@@ -38,6 +82,13 @@ loader.load( 'face.glb', function ( gltf ) {
 	console.error( error );
 
 } );
+
+function animate() {
+    requestAnimationFrame(animate);
+    render();
+  }
+
+  animate();
 
 
 
