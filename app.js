@@ -69,6 +69,7 @@ tabs.forEach((tab, index) => {
     dummy.style.left = tab.offsetLeft + 'px'
     dummy.style.right = tab.offsetRight + 'px'
     dummy.style.width = size.width + 'px'
+    dummy.style.height = size.height + 'px'
     contents.forEach(content => {
       content.style.display = "none";
     })
