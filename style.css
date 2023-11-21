@@ -18,7 +18,7 @@ padding: 0;
 box-sizing: border-box;
 position: relative;
 overflow-x: hidden;
-font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 
 }
 
@@ -171,11 +171,11 @@ nav {
     background-color: var(--orange);
 
     font-size: large;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 200;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-weight: 600;
     border: #d7dee4 solid px;
     width: fit-content;
-    padding: 5px;
+    padding: 10px;
     margin: 10px 10px 10px 10px;
     margin-top: 20px;
     color: #d7dee4;
