@@ -43,11 +43,13 @@ var contents = document.querySelectorAll(".content")
 
     window.addEventListener("scroll", e => {
       // console.log(window.innerWidth)
-      if (window.pageYOffset < face.clientHeight){
+      if (window.scrollY < face.clientHeight){
         header.style.color = "white"
+        console.log("white")
       }
       else {
         header.style.color = "black"
+        console.log("black")
       }
 
     });

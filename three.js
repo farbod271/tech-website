@@ -18,7 +18,7 @@ renderer.setSize( faced.clientWidth, faced.clientHeight );
 // light.position.set(15, 15, 15);
 // scene.add(light);
 
-const light = new THREE.PointLight( 0xffffff, 1, 100 );
+const light = new THREE.PointLight( 0xffffff, 1,150 );
 light.position.set( 1, 20, 30 );
 // light.castShadow = true; 
 scene.add( light );
@@ -64,7 +64,7 @@ const loader = new GLTFLoader();
 loader.load( 'face.glb', function ( gltf ) {
     gltf.scene.scale.set(0.5,0.5,0.5)
     scene.add( gltf.scene );
-    scene.background = new THREE.Color(0x161616);
+    scene.background = new THREE.Color("rgb(34, 34, 42)");
 
     // render();
     faced.appendChild( renderer.domElement );
