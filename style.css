@@ -51,13 +51,20 @@ nav {
 }
 
 .header span {
-    background-color: rgb(232, 27, 27);
+    background-color: var(--orange);
     width: 10px;
     height: 10px;
     border-radius: 50%;
     display: inline-block;
     margin-left: 0px;
 }
+
+
+.farbod {
+    height: 20px;
+    width: 20px;
+}
+
 
 .media {
     display: flex;

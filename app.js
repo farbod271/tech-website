@@ -6,11 +6,15 @@ var length = triangle.getTotalLength();
 var header = document.querySelector(".header")
 var face = document.querySelector(".face")
 var contents = document.querySelectorAll(".content")
-
+var farbod = document.getElementById("farbod")
+var farbod_length = farbod.getTotalLength()
 
 
 // triangle.style.strokeDasharray = length;
 // triangle.style.strokeDashoffset = length;
+
+farbod.style.strokeDasharray = farbod_length;
+farbod.style.strokeDashoffset = farbod_length;
 
 
 
@@ -26,6 +30,13 @@ var contents = document.querySelectorAll(".content")
   //     id: "scrub"
   //   }
   // });
+console.log(farbod.style.strokeDashoffset)
+
+  gsap.to("#farbod", {
+    strokeDashoffset: 0,
+      duration: 7,
+
+  })
 
   // gsap.to(".cls-1", {
   //   strokeDashoffset : 0,
