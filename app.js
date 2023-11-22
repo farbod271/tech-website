@@ -35,6 +35,11 @@ console.log(farbod.style.strokeDashoffset)
   gsap.to("#farbod", {
     strokeDashoffset: 0,
       duration: 7,
+      scrollTrigger: {
+        trigger: ".explain2",
+        markers: false,
+        start: "top 90%",
+      }
 
   })
 
