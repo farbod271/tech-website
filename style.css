@@ -103,7 +103,7 @@ nav {
 }
 
 .first-view {
-    height: max(142vh);
+    height: 1100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -371,10 +371,15 @@ nav {
 
 .content .cards {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     overflow-x: scroll;
-    -ms-overflow-style: none;
+    /* -ms-overflow-style: none; */
     width: 100%;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    scroll-snap-align: start;
 
 }
 
@@ -383,23 +388,30 @@ nav {
 
     background-color: #bec4c9;
     color: #202124;
-
 }
 
-.content .cards::-webkit-scrollbar {
+
+.content .cards .card a:hover {
+
+    color: #ffffff;
+}
+
+/* .content .cards::-webkit-scrollbar {
     display: none;
     
-}
+} */
 
 
 .cards .card {
     width: 170px;
     height: 170px;
     margin: 30px;
+    flex-shrink: 0;
+
     background-color: #ef5b25;
     color: #ffffff;
     border-radius: 20px;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -422,6 +434,7 @@ nav {
     padding: 10px;
     border: #787878 solid 2px;
     color: #ffffff;
+    flex-shrink: 0;
 }
 
 
@@ -441,7 +454,7 @@ footer {
 
 
 
-@media screen and (min-width: 900px){ 
+@media screen and (min-width: 600px){ 
     .first-view {
         height: max(110vh);
         width: 100%;
@@ -469,6 +482,20 @@ footer {
         width: 70%;
     }
 
+
+    .content .cards {
+        display: flex;
+        justify-content: center;
+        overflow-x: scroll;
+        width: 100%;
+        flex-basis: auto;
+        flex-direction: row;
+    }
+
+    .content .cards::-webkit-scrollbar {
+    display: none;
+    
+}
 
 
     .explain h4 {
