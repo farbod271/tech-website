@@ -410,7 +410,7 @@ nav {
 
     background-color: #ef5b25;
     color: #ffffff;
-    border-radius: 20px;
+    border-radius: 53px;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -426,7 +426,7 @@ nav {
     height: 170px;
     margin: 30px;
     background-color: transparent;
-    border-radius: 20px;
+    border-radius: 53px;
     display: flex;
     flex-direction: column;
     justify-content: center;
