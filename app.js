@@ -1,13 +1,28 @@
 const c = console.log.bind(document)
 gsap.registerPlugin(ScrollTrigger);
 
-var triangle = document.getElementById("path-line4");
-var length = triangle.getTotalLength();
+// var triangle = document.getElementById("path-line4");
+// var length = triangle.getTotalLength();
 var header = document.querySelector(".header")
 var face = document.querySelector(".face")
 var contents = document.querySelectorAll(".content")
 var farbod = document.getElementById("farbod")
 var farbod_length = farbod.getTotalLength()
+
+var orange1 = document.getElementById("orange1")
+var orange1_length = orange1.getTotalLength()
+
+orange1.style.strokeDasharray = orange1_length;
+orange1.style.strokeDashoffset = orange1_length
+
+
+
+var orange2 = document.getElementById("orange2")
+var orange2_length = orange2.getTotalLength()
+
+orange2.style.strokeDasharray = orange2_length;
+orange2.style.strokeDashoffset = orange2_length
+
 
 
 // triangle.style.strokeDasharray = length;
@@ -17,6 +32,30 @@ farbod.style.strokeDasharray = farbod_length;
 farbod.style.strokeDashoffset = farbod_length;
 
 
+
+  gsap.to("#orange1", {
+    strokeDashoffset : 0
+    ,scrollTrigger: {
+      trigger: ".story",
+      start: "top 50%",
+      end: "50% 10%",
+      scrub: 0.9,
+      // markers: true,
+      id: "scrub"
+    }
+  });
+
+  gsap.to("#orange2", {
+    strokeDashoffset : 0
+    ,scrollTrigger: {
+      trigger: ".story",
+      start: "60% 50%",
+      end: "bottom 70%",
+      scrub: 0.9,
+      // markers: true,
+      id: "scrub"
+    }
+  });
 
 
   // gsap.to("#path-line4", {
