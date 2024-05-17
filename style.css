@@ -25,7 +25,7 @@ font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
 
 nav {
     position: fixed;
-    height: 49px;
+    height: 60px;
     /* background-color: rgba(35, 20, 20, 0.175); */
     width: 100vw;
     display: flex;
@@ -78,8 +78,8 @@ nav {
 
 .media a {
     color: #f0f8ff;
-    width: 18px;
-    height: 18px;  
+    width: 22px;
+    height: 22px;  
 }
 
 .media a:nth-child(3) {
